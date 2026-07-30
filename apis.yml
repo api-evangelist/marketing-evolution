@@ -1,8 +1,25 @@
 aid: marketing-evolution
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/marketing-evolution.png
 name: Marketing Evolution
-description: Marketing Evolution is a company surfaced as a portfolio company of insight-partners and
-  added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: Marketing Evolution is a marketing measurement and analytics company that provides an AI-driven
+  operating system for marketing operations. Its platform unifies audience data, media exposure, third-party
+  signals, and proprietary sources into a single view of marketing performance and customer behavior, connecting
+  strategy, creative, media, and measurement through an AI-powered loop that enables real-time campaign adaptation
+  rather than static launches. Core products include its Data Platform and Decision Engine, delivering unified
+  marketing measurement (UMM) and person-level attribution to enterprise marketers. The company is backed by
+  Insight Partners. As of this enrichment pass it publishes no public developer portal, API documentation, or
+  machine-readable API specification.
 url: https://raw.githubusercontent.com/api-evangelist/marketing-evolution/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,9 +29,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Marketing
+- Analytics
+- Marketing Measurement
+- Attribution
+- Media Planning
+- Artificial Intelligence
+- MarTech
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -22,5 +46,22 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/marketing-evolution-domain-security.yml
 - type: Website
   url: https://www.marketingevolution.com/
+- type: Blog
+  url: https://www.marketingevolution.com/knowledge-center
+- type: Support
+  url: https://www.marketingevolution.com/contact-us
+- type: PrivacyPolicy
+  url: https://www.marketingevolution.com/marketing-evolution-privacy-policy
+- type: TermsOfService
+  url: https://www.marketingevolution.com/terms-of-service
+- type: Login
+  url: https://insights.marketingevolution.com/
+x-enrichment:
+  date: '2026-07-20'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
