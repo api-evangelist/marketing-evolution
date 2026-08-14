@@ -12,14 +12,18 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/marketing-evolution.png
 name: Marketing Evolution
-description: Marketing Evolution is a marketing measurement and analytics company that provides an AI-driven
-  operating system for marketing operations. Its platform unifies audience data, media exposure, third-party
-  signals, and proprietary sources into a single view of marketing performance and customer behavior, connecting
-  strategy, creative, media, and measurement through an AI-powered loop that enables real-time campaign adaptation
-  rather than static launches. Core products include its Data Platform and Decision Engine, delivering unified
-  marketing measurement (UMM) and person-level attribution to enterprise marketers. The company is backed by
-  Insight Partners. As of this enrichment pass it publishes no public developer portal, API documentation, or
-  machine-readable API specification.
+description: Marketing Evolution is an enterprise marketing measurement and analytics company whose stated
+  mission is to "make marketing knowable." It ships two products. Substrate is positioned as a system of
+  record for marketing performance, unifying fragmented media, audience, commerce and third-party data,
+  enriching it, and publishing standardized output to data warehouses, BI tools, CDPs and agents. Darwin
+  is the decisioning layer on top, running unified marketing measurement (MMM plus multi-touch attribution),
+  budget scenario modeling and ROI forecasting, media performance intelligence, and always-on agents with
+  automated anomaly detection. Roughly thirty published connectors cover the major ad platforms, warehouses,
+  CRM and BI systems. The company is backed by Insight Partners and sells exclusively through an enterprise
+  demo-request motion. As of this enrichment pass it publishes no developer portal, API reference, or
+  machine-readable specification; its API host, api.marketingevolution.com, returns HTTP 403 to every
+  anonymous request, and its published integration mechanism is data-plane (SFTP, Amazon S3, Snowflake
+  data shares) rather than a public request/response API.
 url: https://raw.githubusercontent.com/api-evangelist/marketing-evolution/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -29,7 +33,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-08-13'
 tags:
 - Company
 - Marketing
@@ -39,6 +43,9 @@ tags:
 - Media Planning
 - Artificial Intelligence
 - MarTech
+- Marketing Mix Modeling
+- Marketing Intelligence
+- Advertising
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -46,22 +53,55 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: TrustCenter
+  url: security/marketing-evolution-trust-center.yml
 - type: DomainSecurity
   url: security/marketing-evolution-domain-security.yml
+- type: Lifecycle
+  url: lifecycle/marketing-evolution-lifecycle.yml
+- type: StatusPage
+  url: https://status.marketingevolution.com/
+- type: LLMsTxt
+  url: llms/marketing-evolution-llms.txt
+- type: Plans
+  url: plans/marketing-evolution-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/marketing-evolution-rate-limits.yml
 - type: Website
-  url: https://www.marketingevolution.com/
+  url: https://marketingevolution.com/
 - type: Blog
-  url: https://www.marketingevolution.com/knowledge-center
+  url: https://marketingevolution.com/blog
 - type: Support
-  url: https://www.marketingevolution.com/contact-us
+  url: https://marketingevolution.com/contact
 - type: PrivacyPolicy
-  url: https://www.marketingevolution.com/marketing-evolution-privacy-policy
+  url: https://marketingevolution.com/privacy-policy
 - type: TermsOfService
-  url: https://www.marketingevolution.com/terms-of-service
+  url: https://marketingevolution.com/terms-conditions
 - type: Login
-  url: https://insights.marketingevolution.com/
+  url: https://app.marketingevolution.com/
 x-enrichment:
-  date: '2026-07-20'
-  status: minimal
-  artifacts_added: 1
+  date: '2026-08-13'
+  status: enriched
+  artifacts_added: 6
   pass: local-v1
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    Marketing Evolution markets "native connectors and APIs" on its Substrate page but
+    publishes no developer portal, reference or spec anywhere in its 314-URL sitemap —
+    the only route to the product is the /request-demo enterprise sales form, and the
+    live API host api.marketingevolution.com answers every anonymous request, including
+    /openapi.json and every /.well-known/ path, with 403 {"message":"Forbidden"}.
+  evidence:
+  - url: https://api.marketingevolution.com/openapi.json
+    status: 403
+  - url: https://api.marketingevolution.com/v1
+    status: 403
+  - url: https://www.marketingevolution.com/openapi.json
+    status: 404
+  - url: https://marketingevolution.com/request-demo
+    status: 200
+  - url: https://marketingevolution.com/sitemap.xml
+    status: 200
+  checked: '2026-08-13'
