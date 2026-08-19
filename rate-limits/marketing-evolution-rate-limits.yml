@@ -1,0 +1,25 @@
+generated: '2026-08-13'
+method: searched
+source: https://marketingevolution.com/sitemap.xml
+limit_count: 0
+limits: []
+response_headers: []
+exhaustion_status_code: null
+retry_after: unknown
+evidence:
+- url: https://marketingevolution.com/sitemap.xml
+  status: 200
+  note: >-
+    No developer portal, API reference or docs page exists in the sitemap, so there is
+    no page on which rate limits could be documented.
+- url: https://api.marketingevolution.com/
+  status: 403
+  note: >-
+    The API host answers every anonymous request with {"message":"Forbidden"}. No
+    RateLimit-*/X-RateLimit-* headers are observable without credentials, so limits
+    cannot be probed either.
+notes: >-
+  Honest zero. Marketing Evolution documents no rate limits because it documents no
+  public API. The API host exists (AWS API Gateway at api.marketingevolution.com) but
+  is entirely gated, so neither the documented limit nor the runtime header signal is
+  available to an agent.

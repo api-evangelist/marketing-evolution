@@ -1,0 +1,142 @@
+generated: '2026-08-13'
+method: searched
+probe: true
+source: https://trust.marketingevolution.com/
+url: https://trust.marketingevolution.com/
+platform: SafeBase (by Drata)
+x-evidence:
+  fetched: '2026-08-13'
+  url: https://trust.marketingevolution.com/
+  http_status: 200
+  content_type: text/html
+  parsed_from: __NEXT_DATA__ props.pageProps.orgInfo.sp.products.default.raw.spData
+  control_items_published: 175
+
+# IMPORTANT — read `status` on every row before treating this as a certification claim.
+# The trust center names three frameworks, but the provider's own explanation on each
+# one says it is NOT currently held: the ISO 27001 certificate LAPSED and is in
+# recertification, and both ISO 42001 and SOC 2 Type 2 are planned, not audited.
+# This artifact records that distinction verbatim so the catalog does not credit
+# Marketing Evolution with certifications it says it does not hold.
+certifications_held: 0
+certifications_in_progress: 3
+
+certifications:
+- name: ISO/IEC 27001:2022
+  status: in_progress
+  held: false
+  auditor: A-LIGN
+  provider_statement: >-
+    Marketing Evolution previously held ISO27001 certification. While our certification
+    lapsed during a period of organizational restructuring, our information security
+    management system and security controls have remained in place and continue to
+    operate. We are actively engaged with A-LIGN to achieve ISO27001:2022 recertification.
+  source: https://trust.marketingevolution.com/?itemName=reports&itemUid=5c93ca3e-519a-4260-a50a-a9de78294538
+- name: ISO/IEC 42001:2023
+  status: in_progress
+  held: false
+  auditor: null
+  provider_statement: >-
+    Marketing Evolution plans to pursue ISO/IEC 42001 certification as part of our
+    expanding AI governance program. Our AI management system includes documented
+    governance, risk management, and development practices, with certification planned
+    as part of our broader compliance roadmap.
+  source: https://trust.marketingevolution.com/?itemName=reports&itemUid=14594ab4-5ef0-41fb-a53c-aa408ff72971
+- name: SOC 2 Type 2
+  status: in_progress
+  held: false
+  auditor: A-LIGN
+  provider_statement: >-
+    Marketing Evolution plans to undergo a SOC 2 Type II audit following completion of
+    our ISO/IEC 27001 recertification. Our security program and control environment are
+    designed to support SOC 2 requirements, and the audit is included as part of our
+    ongoing compliance roadmap.
+  source: https://trust.marketingevolution.com/?itemName=reports&itemUid=fa950d02-cbb3-4010-b917-7137a7c2a982
+
+# Published control areas (SafeBase cards) that carry provider-authored explanations.
+control_areas:
+- Overview
+- Compliance
+- Documents
+- Reports
+- Product Security
+- Data Security
+- Data Privacy
+- Customer Data
+- App Security
+- Access Control
+- Network Security
+- Endpoint Security
+- Infrastructure
+- Corporate Security
+- Incident Response
+- Risk Management
+- Risk Profile
+- Asset Management
+- BC/DR
+- Change Management
+- Continuous Monitoring
+- Training
+- Policies
+- Legal
+- Subprocessors
+- AI
+- ESG
+
+# Security-assurance items published on the trust center. These are control
+# ASSERTIONS with provider explanations, not attested reports.
+security_assurance:
+- item: Application Penetration Testing
+  maturity: full
+  provider_statement: >-
+    Marketing Evolution proactively identifies vulnerabilities in its applications and
+    systems through various methods, including security assessments. This is part of a
+    comprehensive vulnerability management policy designed to reduce security risks and
+    protect information assets.
+- item: Penetration Testing
+  maturity: null
+  provider_statement: >-
+    Marketing Evolution has a defined policy for vulnerability management across the
+    organization, which includes monitoring, cataloging, and assigning risk ratings to
+    vulnerabilities to prioritize remediation efforts.
+- item: Code Analysis
+  maturity: full
+  provider_statement: >-
+    Marketing Evolution identifies vulnerabilities using a combination of methods, which
+    may include automated tools, development and deployment workflows, security
+    assessments, third-party advisories, and other sources of security-relevant
+    information. All AI-generated code must follow secure coding practices, licensing
+    rules, and regulatory requirements, with developers clearly documenting when AI
+    assistance was used.
+- item: Responsible Disclosure
+  maturity: null
+  provider_statement: >-
+    Marketing Evolution actively addresses responsible disclosure through established
+    processes, including bug bounties, to proactively identify and remediate security
+    flaws.
+
+# Why no VulnerabilityDisclosure / Security pointer is emitted from this artifact:
+# the trust center ASSERTS a responsible-disclosure process (and mentions bug bounties)
+# but publishes no reporting channel — no security.txt on any host (all 404, see
+# well-known/marketing-evolution-well-known.yml), no security@ address anywhere on the
+# site or trust center, no named bug-bounty program page (HackerOne/Bugcrowd/Intigriti
+# all miss). A researcher reading this cannot report a vulnerability, so the claim is
+# recorded here rather than promoted to a disclosure pointer.
+responsible_disclosure:
+  asserted: true
+  reporting_channel_published: false
+  security_txt: false
+  security_contact: null
+  bounty_program_url: null
+
+# Why no Compliance pointer is emitted: `compliance_published` credits a published
+# certification/compliance posture. Marketing Evolution publishes a compliance ROADMAP
+# with zero currently-held certifications. Flip this to a Compliance pointer on a later
+# pass once A-LIGN completes the ISO/IEC 27001:2022 recertification.
+compliance_pointer_emitted: false
+
+notes: >-
+  Full SafeBase trust center with 175 published control items, an AI-governance (AIMS)
+  section, and a vendor-management program. Substantially more security transparency
+  than the company publishes about its API surface, which has no public documentation
+  at all.

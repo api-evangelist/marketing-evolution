@@ -1,0 +1,82 @@
+generated: '2026-08-13'
+method: probed
+source: https://status.marketingevolution.com/api/v2/summary.json
+
+status_page:
+  present: true
+  url: https://status.marketingevolution.com/
+  platform: Atlassian Statuspage
+  page_id: fpcfjc2kfq22
+  time_zone: America/Los_Angeles
+  machine_readable: true
+  endpoints:
+  - url: https://status.marketingevolution.com/api/v2/status.json
+    status: 200
+    description: overall indicator + description
+  - url: https://status.marketingevolution.com/api/v2/summary.json
+    status: 200
+    description: page, components, incidents, scheduled maintenances
+  - url: https://status.marketingevolution.com/api/v2/components.json
+    status: 200
+    description: per-component status
+  - url: https://status.marketingevolution.com/history.rss
+    status: 200
+    description: incident history feed (empty at time of probe)
+  observed:
+    fetched: '2026-08-13'
+    indicator: none
+    description: All Systems Operational
+    incident_history_entries: 0
+  components:
+  - name: ROI Brain
+    status: operational
+    created: '2018-02-20'
+  - name: SFTP
+    status: operational
+    created: '2018-02-21'
+  - name: Amazon S3
+    status: operational
+    created: '2018-02-21'
+  - name: Data Discovery
+    status: operational
+    created: '2018-02-21'
+  note: >-
+    The four monitored components are the company's actual delivery surface and they
+    describe a BULK DATA product, not a request/response API — SFTP and Amazon S3 are
+    file-transfer channels, Data Discovery and ROI Brain are platform services. No
+    component named "API" is monitored, which is consistent with there being no public
+    developer API. Components were created in 2018 and none has been updated since 2018,
+    so the page is long-lived but lightly maintained.
+
+versioning:
+  policy_published: false
+  scheme: null
+  note: No API versioning policy is published; there is no public API reference to version.
+
+deprecation:
+  policy_published: false
+  sunset_header: unknown
+  deprecation_header: unknown
+  note: >-
+    No deprecation or sunset policy found on the site, the trust center or the status
+    page. RFC 8594 Sunset/Deprecation header behaviour cannot be observed because every
+    path on api.marketingevolution.com returns 403 to an anonymous client.
+
+sla:
+  published: false
+  uptime_commitment: null
+  note: >-
+    No public SLA or uptime commitment. Terms and Conditions
+    (https://marketingevolution.com/terms-conditions) is a website terms document; any
+    service-level commitment lives in the negotiated enterprise contract.
+
+changelog:
+  published: false
+  note: >-
+    No dated product or API changelog. The blog (https://marketingevolution.com/blog)
+    carries product announcements — e.g. "Introducing the Substrate" — but is editorial,
+    not a changelog.
+
+pointers_emitted:
+- Lifecycle
+- StatusPage

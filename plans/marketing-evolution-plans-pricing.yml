@@ -1,0 +1,31 @@
+generated: '2026-08-13'
+method: searched
+source: https://marketingevolution.com/sitemap.xml
+plan_count: 0
+pricing_page: null
+model: enterprise-sales-only
+currency: null
+free_tier: false
+trial: false
+self_serve_signup: false
+plans: []
+evidence:
+- url: https://marketingevolution.com/sitemap.xml
+  status: 200
+  note: >-
+    Full 314-URL sitemap enumerated. It contains no /pricing, /plans, /packages or
+    /editions page — the only commercial paths are /request-demo and /contact.
+- url: https://marketingevolution.com/request-demo
+  status: 200
+  note: Lead-capture demo request form; the sole documented route to becoming a customer.
+- url: https://marketingevolution.com/darwin
+  status: 200
+  note: Darwin product page states no price; call to action is "request a demo".
+- url: https://marketingevolution.com/substrate
+  status: 200
+  note: Substrate product page states no price; call to action is "request a demo".
+notes: >-
+  Marketing Evolution publishes no pricing of any kind. Both products (Darwin and
+  Substrate) are sold through an enterprise sales motion behind a demo request, so
+  there are no tiers, quotas, overages or per-tier limits to record. plan_count: 0 is
+  the finding, not a gap in the search.
